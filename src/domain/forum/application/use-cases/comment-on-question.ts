@@ -3,16 +3,16 @@ import { QuestionRepository } from '../repositories/questions-repository'
 import { QuestionComment } from '../../enterprise/entities/question-comment'
 import { QuestionCommentsRepository } from '../repositories/question-comments-repository'
 
-interface CommentOnQuestiosUseCaseRequest {
+interface CommentOnQuestionUseCaseRequest {
   authorId: string
   questionId: string
   content: string
 }
-interface CommentOnQuestiosUseCaseResponse {
+interface CommentOnQuestionUseCaseResponse {
   questionComment: QuestionComment
 }
 
-export class CommentOnQuestiosUseCase {
+export class CommentOnQuestionUseCase {
   constructor(
     private questionRepository: QuestionRepository,
     private questionCommentsRepository: QuestionCommentsRepository,
@@ -22,7 +22,7 @@ export class CommentOnQuestiosUseCase {
     authorId,
     questionId,
     content,
-  }: CommentOnQuestiosUseCaseRequest): Promise<CommentOnQuestiosUseCaseResponse> {
+  }: CommentOnQuestionUseCaseRequest): Promise<CommentOnQuestionUseCaseResponse> {
     const question = await this.questionRepository.findById(questionId)
 
     if (!question) {
