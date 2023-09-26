@@ -10,7 +10,7 @@ interface DeleteAnswerCommentUseCaseRequest {
 // eslint-disable-next-line @typescript-eslint/ban-types
 type DeleteAnswerCommentUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
-  {}
+  object
 >
 
 export class DeleteAnswerCommentUseCase {

@@ -34,8 +34,6 @@ describe('Delete Answer Comment', () => {
 
     await inMemoryAnswerCommentsRepository.create(answerComment)
 
-    console.log(inMemoryAnswerCommentsRepository.items)
-
     const result = await sut.execute({
       answerCommentId: answerComment.id.toString(),
       authorId: 'author-2',
